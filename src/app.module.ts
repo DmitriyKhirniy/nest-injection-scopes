@@ -4,7 +4,9 @@ import { AppService } from './app.service';
 import { FeatureModule } from './feature/feature.module';
 
 @Module({
-  imports: [ FeatureModule ],
+  imports: [
+    FeatureModule
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
