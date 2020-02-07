@@ -1,14 +1,16 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+
 
 @Injectable()
 export class BaseFeatureService {
+
+  @Inject(ConfigService)
+  protected readonly configService: ConfigService;
   
   protected value: number;
   
   protected name: string;
-
-  constructor(protected readonly configService: ConfigService) {}
   
   protected getFeatureValue1(): number {
     return 1;
