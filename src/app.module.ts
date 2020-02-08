@@ -4,13 +4,17 @@ import { AppService } from './app.service';
 import { FeatureModule } from './feature/feature.module';
 
 import { ResponseTimeMiddleware } from '@nest-middlewares/response-time';
+import { CacheService } from './core/cache.service';
+import { RequestCacheService } from './core/request-cache.service';
 
 @Module({
   imports: [
     FeatureModule
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService
+  ],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
