@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class FeatureController {
 
   constructor(private readonly service: FeatureService) {
-    console.log('time of Controller creation: ', new Date().toTimeString())
+    // console.log('time of Controller creation: ', new Date().toTimeString())
   }
 
   @Get('feature')
