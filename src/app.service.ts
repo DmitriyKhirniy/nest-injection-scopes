@@ -4,10 +4,12 @@ import { TokenValue } from './app.token';
 @Injectable()
 export class AppService {
 
-  constructor(@Inject(TokenValue) private text: string,
-              @Inject('INJECTION_TOKEN') private text2: string) {}
+  constructor(@Inject(TokenValue) private text: string) {
+    //@Inject(Symbol('INJECTION_TOKEN')) private text: string
+    console.log('IS equals: ',TokenValue === Symbol('INJECTION_TOKEN'));
+  }
 
   getHello(): string {
-    return `Text: ${this.text}:${this.text2}`;
+    return `Text: ${this.text}`;
   }
 }

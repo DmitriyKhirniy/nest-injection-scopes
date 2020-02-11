@@ -1,1 +1,1 @@
-export const TokenValue = 'INJECTION_TOKEN';
+export const TokenValue = Symbol('INJECTION_TOKEN');
